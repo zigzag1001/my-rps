@@ -27,7 +27,7 @@ Results are from the **player’s perspective**. `determine_winner(player, compu
 
 ### Agreed plan
 
-Before implementation, predict one matchup and explain it with your local coding agent. Discuss a short plan and checks. Once it makes sense, ask the agent to replace this paragraph with the agreed plan, preserving the expected results above. Continue in the same chat.
+Implement one independent round using the supplied interface and server; do not add scoring or saved history. `determine_winner(player, computer)` returns `win`, `lose`, or `tie` from the player's perspective. For example, Rock versus Paper is a player loss. Reject unsupported moves such as `lizard` with HTTP 400 and a helpful error. Verify all nine matchups, a real valid request and invalid request, and a real-browser round plus replay, fixing only the computer choice in request and browser tests.
 
 ### Checks
 
@@ -44,7 +44,7 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `.venv/bin/python check
 
 ### Work record
 
-- Issue: add your own issue URL.
+- Issue: https://github.com/zigzag1001/my-rps/issues/1
 - Pull request / CI: add actual URLs when they exist.
-- Implementation: **Not implemented.** The shell is supplied; `game.py` is unfinished.
-- Checks: **Rules not verified.** Supplied request/browser tests cover the shell only. After implementation, record actual full-check results and your browser observations here; put detailed results in the PR. Passing formatting and analysis alone is not evidence of correct rules.
+- Implementation: [game.py](game.py), [tests/test_game.py](tests/test_game.py), and [tests/e2e/test_round.py](tests/e2e/test_round.py).
+- Checks: `.venv/bin/python check.py` passed: Black, Pylint, 23 non-browser tests, and 6 Chromium tests. Browser observation: player chose scissors, computer chose paper, and the game displayed “You win!”; scissors beats paper.
