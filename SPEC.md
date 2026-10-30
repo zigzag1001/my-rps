@@ -45,6 +45,7 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `.venv/bin/python check
 ### Work record
 
 - Issue: https://github.com/zigzag1001/my-rps/issues/1
-- Pull request / CI: add actual URLs when they exist.
+- Pull request: https://github.com/zigzag1001/my-rps/pull/2
+- CI: https://github.com/zigzag1001/my-rps/actions/runs/41115783973/job/124269531273?pr=2
 - Implementation: [game.py](game.py), [tests/test_game.py](tests/test_game.py), and [tests/e2e/test_round.py](tests/e2e/test_round.py).
 - Checks: `.venv/bin/python check.py` passed: Black, Pylint, 23 non-browser tests, and 6 Chromium tests. Browser observation: player chose scissors, computer chose paper, and the game displayed “You win!”; scissors beats paper.
